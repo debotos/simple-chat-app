@@ -1,0 +1,29 @@
+{
+  "name": "simple-chat-app",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": "git@github.com:debotos/simple-chat-app.git",
+  "author": "Debotos Das <debotosdas@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "./node_modules/.bin/nodemon server.js"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-async-errors": "^3.0.0",
+    "joi": "^13.6.0",
+    "joi-objectid": "^2.0.0",
+    "lodash": "^4.17.10",
+    "mongoose": "^5.2.7",
+    "morgan": "^1.9.0",
+    "passport": "^0.4.0",
+    "winston": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.3"
+  }
+}

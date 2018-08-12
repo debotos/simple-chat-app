@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<%include partials/head %>
+  <link rel="stylesheet" href="css/login-page.css" type="text/css">
+  </head>
+
+  <body>
+    <section class="hero is-success is-fullheight">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <div class="column is-4 is-offset-4">
+            <h3 class="title has-text-grey">Login</h3>
+            <p class="subtitle has-text-grey">Please login to proceed.</p>
+            <div class="box">
+              <figure class="avatar">
+                <img width="128" height="128" src="/images/login.gif">
+              </figure>
+              <form>
+                <div class="field">
+                  <div class="control">
+                    <input class="input is-large" type="email" placeholder="Your Email" autofocus="">
+                  </div>
+                </div>
+
+                <div class="field">
+                  <div class="control">
+                    <input class="input is-large" type="password" placeholder="Your Password">
+                  </div>
+                </div>
+                <button style="margin-top: 2.2rem;" class="button is-block is-info is-large is-fullwidth">Login</button>
+              </form>
+            </div>
+            <p class="has-text-grey">
+              <a href="../">Sign Up</a> &nbsp;·&nbsp;
+              <a href="../">Forgot Password</a> &nbsp;·&nbsp;
+              <a href="../">Need Help?</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="hero-foot has-text-centered">
+        <% include partials/copyright %>
+      </div>
+    </section>
+    <% include partials/footer %>
+  </body>
+
+</html>
