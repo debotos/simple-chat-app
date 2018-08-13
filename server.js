@@ -1,10 +1,27 @@
 const winston = require('winston');
 const express = require('express');
 const passport = require('passport');
+const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
-const app = express();
+const http = require('http');
+const flash = require('connect-flash');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 const path = require('path');
+const helmet = require('helmet');
+const compression = require('compression');
+const socketIO = require('socket.io');
+
+const secret = require('./src/server/config/credential/keys');
+
+const app = express();
+const server = http.createServer(app);
+const io = socketIO(server);
+
+// Database
+require('./src/server/config/db')(mongoose);
 
 // Server log
 if (process.env.NODE_ENV === 'production') {
@@ -22,6 +39,19 @@ app.set('views', path.join(__dirname, 'src/client/views'));
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
+// Middleware
+app.use(flash());
+app.use(compression());
+app.use(helmet());
+app.use(cookieParser());
+app.use(
+  session({
+    secret: secret.sessionSecret,
+    resave: false,
+    saveUninitialized: false,
+    store: new MongoStore({ mongooseConnection: mongoose.connection })
+  })
+);
 // Morgan logger middleware
 app.use(morgan('tiny'));
 // Body parser middleware
@@ -31,7 +61,6 @@ app.use(bodyParser.json());
 app.use(express.static('src/client/public'));
 
 require('./src/server/config/logging')();
-require('./src/server/config/db')();
 require('./src/server/config/validation')();
 require('./src/server/config/routes')(app);
 
@@ -41,8 +70,8 @@ require('./src/server/config/routes')(app);
 // require('./src/server/config/passport')(passport);
 
 const port = process.env.PORT || 5000;
-const server = app.listen(port, () =>
-  winston.info(`✔ Chat Server started on port ${port}...`)
+const ChatServer = server.listen(port, () =>
+  winston.info(` 💻 Chat Server started on port ${port} 🌎 `)
 );
 
-module.exports = server;
+module.exports = ChatServer;
