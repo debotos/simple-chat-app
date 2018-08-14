@@ -1,6 +1,5 @@
 const winston = require('winston');
 const express = require('express');
-const passport = require('passport');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -13,8 +12,11 @@ const path = require('path');
 const helmet = require('helmet');
 const compression = require('compression');
 const socketIO = require('socket.io');
+const validator = require('express-validator');
+const _ = require('lodash');
 
 const secret = require('./src/server/config/credential/keys');
+const passport = require('./src/server/config/passport');
 
 const app = express();
 const server = http.createServer(app);
@@ -40,6 +42,7 @@ app.set('views', path.join(__dirname, 'src/client/views'));
 app.set('view engine', 'ejs');
 
 // Middleware
+app.use(validator());
 app.use(flash());
 app.use(compression());
 app.use(helmet());
@@ -59,15 +62,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 // Set static folder
 app.use(express.static('src/client/public'));
+// passport
+app.use(passport.initialize());
+app.use(passport.session());
 
 require('./src/server/config/logging')();
 require('./src/server/config/validation')();
-require('./src/server/config/routes')(app);
+require('./src/server/config/routes')(app, passport);
 
-// Passport middleware
-// app.use(passport.initialize());
-// Passport Config
-// require('./src/server/config/passport')(passport);
+// Local
+app.locals._ = _;
 
 const port = process.env.PORT || 5000;
 const ChatServer = server.listen(port, () =>

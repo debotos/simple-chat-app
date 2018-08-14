@@ -40,7 +40,8 @@ passport.use(
           return done(
             null,
             false,
-            req.flash('error', 'User with email already exist')
+            req.flash('error', 'User with email already exist'),
+            req.flash('username', req.body.username)
           );
         }
 
@@ -75,7 +76,12 @@ passport.use(
         const messages = [];
         if (!user || !user.validUserPassword(password)) {
           messages.push('Email Does Not Exist or Password is Invalid');
-          return done(null, false, req.flash('error', messages));
+          return done(
+            null,
+            false,
+            req.flash('error', messages),
+            req.flash('email', req.body.email)
+          );
         }
 
         return done(null, user);
@@ -167,3 +173,5 @@ passport.use(
     }
   )
 );
+
+module.exports = passport;

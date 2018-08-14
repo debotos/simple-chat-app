@@ -9,7 +9,7 @@
       <div class="hero-body">
         <div class="container has-text-centered">
           <div class="column is-4 is-offset-4">
-            <% if (hasErrors) { console.log(data.email);%>
+            <% if (hasErrors) {%>
               <div class="notification is-danger">
                 <button class="delete is-small"></button>
                 <% _.forEach(messages, function(error){ %>
@@ -19,15 +19,15 @@
                 <% }) %>
               </div>
             <% } %>
-            <h3 class="title has-text-grey">Login</h3>
-            <p class="subtitle has-text-grey">Please login to proceed.</p>
-            <a style="margin-right: 10px;" href="/auth/facebook" class="button is-link is-medium is-outlined" title="Login with Facebook">
+            <h3 class="title has-text-grey">Signup</h3>
+            <p class="subtitle has-text-grey">Please signup to proceed.</p>
+            <a style="margin-right: 10px;" href="/auth/facebook" class="button is-link is-medium is-outlined" title="Signup with Facebook">
               <span class="icon">
                 <i class="fab fa-facebook"></i>
               </span>
               <span>Facebook</span>
             </a>
-            <a href="/auth/google" class="button is-danger is-medium is-outlined" title="Login with Google">
+            <a href="/auth/google" class="button is-danger is-medium is-outlined" title="Signup with Google">
               <span class="icon">
                 <i class="fab fa-google"></i>
               </span>
@@ -35,9 +35,15 @@
             </a>
             <div class="box">
               <figure class="avatar">
-                <img width="128" height="128" src="/images/login.gif">
+                <img width="128" height="128" src="/images/signup.jpg">
               </figure>
-              <form action="/" method="post">
+              <form action="/signup" method="post">
+                <div class="field">
+                  <div class="control">
+                    <input name="username" class="input is-large" type="text" placeholder="Your Username" autofocus="" value="<%= data.username %>">
+                  </div>
+                </div>
+
                 <div class="field">
                   <div class="control">
                     <input name="email" class="input is-large" type="email" placeholder="Your Email" autofocus="" value="<%= data.email %>">
@@ -49,11 +55,11 @@
                     <input name="password" class="input is-large" type="password" placeholder="Your Password">
                   </div>
                 </div>
-                <button type="submit" style="margin-top: 2.2rem;" class="button is-block is-info is-large is-fullwidth">Login</button>
+                <button type="submit" style="margin-top: 2.2rem;" class="button is-block is-info is-large is-fullwidth">Signup</button>
               </form>
             </div>
             <p class="has-text-grey">
-              <a href="/signup">Sign Up</a> &nbsp;·&nbsp;
+              <a href="/">Login</a> &nbsp;·&nbsp;
               <a href="../">Forgot Password</a> &nbsp;·&nbsp;
               <a href="../">Need Help?</a>
             </p>
