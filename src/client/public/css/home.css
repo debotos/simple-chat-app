@@ -1,0 +1,72 @@
+.container {
+  padding: 1rem;
+}
+
+nav.navbar {
+  border-top: 4px solid #276cda;
+  margin-bottom: 1rem;
+}
+
+.box {
+  padding: .45rem;
+}
+
+.box:not(:last-child) {
+  margin-bottom: .5rem;
+}
+
+.content:not(:last-child) {
+  margin-bottom: .7rem;
+}
+
+.box.user-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-list-container {
+  height: 86vh;
+}
+
+.navbar-brand .navbar-item .logo {
+  background: url(../images/logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 28px;
+  width: 112px;
+}
+
+.navbar-brand .navbar-item:hover {
+  background-color: #fff;
+  pointer-events: stroke;
+}
+
+.navbar-item img {
+  max-height: 32px;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .box.user-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .navbar-end .navbar-item.has-dropdown.is-hoverable {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .navbar-item img {
+    max-height: 128px;
+    border-radius: 50%;
+  }
+}
+
+/* ::-webkit-scrollbar {
+  display: none;
+} */

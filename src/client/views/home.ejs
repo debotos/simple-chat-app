@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" class="has-navbar-fixed-top">
+<%include partials/head %>
+  <link rel="stylesheet" href="css/home.css" type="text/css">
+  </head>
+
+  <body>
+    <% include partials/navbar.ejs %>
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <!-- users card -->
+            <div class="card user-list-container">
+              <header class="card-header">
+                <p class="card-header-title">
+                  Search New People
+                </p>
+              </header>
+              <div class="card-content">
+                <div class="content">
+                  <div class="control has-icons-left">
+                    <input class="input is-medium" type="text" placeholder="">
+                    <span class="icon is-medium is-left">
+                      <i class="fa fa-search"></i>
+                    </span>
+                  </div>
+                </div>
+                <!-- box1 -->
+                <div class="box user-list">
+                  <div class="user-img">
+                    <figure class="image is-48x48">
+                      <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+                    </figure>
+                  </div>
+                  <div class="user-name">
+                    <p>
+                      <strong>John Smith</strong>
+                    </p>
+                  </div>
+                  <div class="user-action">
+                    <a class="button is-primary is-outlined">
+                      <span class="icon">
+                        <i class="fas fa-user-plus"></i>
+                      </span>
+                      <span>Add Friend</span>
+                    </a>
+                  </div>
+                </div>
+                <!-- box2 -->
+                <div class="box user-list">
+                  <div class="user-img">
+                    <figure class="image is-48x48">
+                      <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+                    </figure>
+                  </div>
+                  <div class="user-name">
+                    <p>
+                      <strong>John Smith</strong>
+                    </p>
+                  </div>
+                  <div class="user-action">
+                    <a class="button is-primary is-outlined">
+                      <span class="icon">
+                        <i class="fas fa-user-plus"></i>
+                      </span>
+                      <span>Add Friend</span>
+                    </a>
+                  </div>
+                </div>
+                <!-- boxs end -->
+              </div>
+            </div>
+            <!-- end users card -->
+          </div>
+          <div class="column">
+            <!-- friends list card -->
+            <div class="card user-list-container">
+              <header class="card-header">
+                <p class="card-header-title">
+                  Search your Friends
+                </p>
+              </header>
+              <div class="card-content">
+                <div class="content">
+                  <div class="control has-icons-left">
+                    <input class="input is-medium" type="text" placeholder="">
+                    <span class="icon is-medium is-left">
+                      <i class="fa fa-search"></i>
+                    </span>
+                  </div>
+                </div>
+                <!-- box1 -->
+                <div class="box user-list">
+                  <div class="user-img">
+                    <figure class="image is-48x48">
+                      <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+                    </figure>
+                  </div>
+                  <div class="user-name">
+                    <p>
+                      <strong>John Smith</strong>
+                    </p>
+                  </div>
+                  <div class="user-action">
+                    <a class="button is-primary is-outlined">
+                      <span class="icon">
+                        <i class="fas fa-comments"></i>
+                      </span>
+                      <span>Send Message</span>
+                    </a>
+                  </div>
+                </div>
+                <!-- box2 -->
+                <div class="box user-list">
+                  <div class="user-img">
+                    <figure class="image is-48x48">
+                      <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+                    </figure>
+                  </div>
+                  <div class="user-name">
+                    <p>
+                      <strong>John Smith</strong>
+                    </p>
+                  </div>
+                  <div class="user-action">
+                    <a class="button is-primary is-outlined">
+                      <span class="icon">
+                        <i class="fas fa-comments"></i>
+                      </span>
+                      <span>Send Message</span>
+                    </a>
+                  </div>
+                </div>
+                <!-- boxs end -->
+              </div>
+            </div>
+            <!-- end friends list card -->
+          </div>
+        </div>
+        <div class="hero-foot has-text-centered">
+          <% include partials/copyright %>
+        </div>
+        </section>
+
+        <% include partials/footer %>
+          <script>
+            $(document).ready(function () {
+              // Check for click events on the navbar burger icon
+              $(".navbar-burger").click(function () {
+                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                $(".navbar-burger").toggleClass("is-active");
+                $(".navbar-menu").toggleClass("is-active");
+              });
+            });
+          </script>
+  </body>
+
+</html>

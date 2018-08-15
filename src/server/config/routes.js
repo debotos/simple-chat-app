@@ -1,10 +1,7 @@
-const express = require('express');
-const users = require('../routes/users');
-const pages = require('../routes/pages');
+const pageRoutes = require('../routes/pageRoutes');
 const error = require('../middleware/error');
 
 module.exports = function(app, passport) {
-  app.use('/', pages(passport));
-  app.use('/api/users', users);
+  app.use('/', pageRoutes(passport));
   app.use(error);
 };
