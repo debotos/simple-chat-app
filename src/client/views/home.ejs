@@ -2,11 +2,12 @@
 <html lang="en" class="has-navbar-fixed-top">
 <%include partials/head %>
   <link rel="stylesheet" href="css/home.css" type="text/css">
+  <link rel="stylesheet" href="css/navbar.css" type="text/css">
   </head>
 
   <body>
     <% include partials/navbar.ejs %>
-      <div class="container">
+      <div class="container home-page-wrapper">
         <div class="columns">
           <div class="column">
             <!-- users card -->
@@ -138,21 +139,12 @@
           </div>
         </div>
         <div class="hero-foot has-text-centered">
-          <% include partials/copyright %>
+          <!-- i will build a quote application here -->
         </div>
         </section>
 
         <% include partials/footer %>
-          <script>
-            $(document).ready(function () {
-              // Check for click events on the navbar burger icon
-              $(".navbar-burger").click(function () {
-                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-                $(".navbar-burger").toggleClass("is-active");
-                $(".navbar-menu").toggleClass("is-active");
-              });
-            });
-          </script>
+          <script src="js/navbar.js"></script>
   </body>
 
 </html>

@@ -7,9 +7,10 @@
   "license": "MIT",
   "scripts": {
     "start": "node server.js",
-    "dev": "./node_modules/.bin/nodemon server.js"
+    "dev": "./node_modules/.bin/nodemon -e .ejs,.js server.js"
   },
   "dependencies": {
+    "async": "^2.6.1",
     "axios": "^0.18.0",
     "bcrypt-nodejs": "^0.0.3",
     "body-parser": "^1.18.3",

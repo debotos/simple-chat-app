@@ -46,5 +46,15 @@ module.exports = passport => {
   // @access  Private
   router.get('/home', isLoggedIn, home.homePage); // Local login
 
+  /*------------------------*/
+  //      Profile Route
+  /*------------------------*/
+  // Route Functions
+  const profile = require('./profile/profile')();
+  // @route   GET /profile
+  // @desc    check for user loggedin, if yes then Get profile page
+  // @access  Private
+  router.get('/profile', isLoggedIn, profile.profilePage); // Local login
+
   return router;
 };
