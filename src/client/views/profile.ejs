@@ -1,153 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" class="has-navbar-fixed-top">
 <%include partials/head %>
-  <link rel="stylesheet" href="css/profile.css" type="text/css">
-  <link rel="stylesheet" href="css/navbar.css" type="text/css">
-  </head>
+<link rel="stylesheet" href="css/profile.css" type="text/css">
+<link rel="stylesheet" href="css/navbar.css" type="text/css">
+</head>
 
-  <body>
-    <% include partials/navbar.ejs %>
-      <div class="container profile-page-wrapper">
-        <div class="columns">
-          <div class="column">
-            <!-- Profile card -->
-            <div class="card profile-container">
-              <header class="card-header">
-                <p class="card-header-title">
-                  Edit Your Profile
-                </p>
-              </header>
-              <div class="card-content">
-                <div class="content">
-                  <!-- username -->
-                  <div class="field">
-                    <label class="label">Username</label>
-                    <div class="control has-icons-left has-icons-right">
-                      <input class="input is-medium" type="text" placeholder="Text input" value="bulma">
-                      <span class="icon is-small is-left">
-                        <i class="fas fa-user"></i>
-                      </span>
-                      <span class="icon is-small is-right">
-                        <i class="fas fa-check"></i>
-                      </span>
-                    </div>
-                    <!-- <p class="help">This username is available</p> -->
-                  </div>
-                  <!-- fullname -->
-                  <div class="field">
-                    <label class="label">Fullname</label>
-                    <div class="control has-icons-left has-icons-right">
-                      <input class="input is-medium" type="text" placeholder="Text input" value="bulma">
-                      <span class="icon is-small is-left">
-                        <i class="fas fa-user"></i>
-                      </span>
-                      <span class="icon is-small is-right">
-                        <i class="fas fa-check"></i>
-                      </span>
-                    </div>
-                    <!-- <p class="help">This username is available</p> -->
-                  </div>
-                  <!-- country -->
-                  <div class="field">
-                    <label class="label">Country</label>
-                    <div class="control has-icons-left has-icons-right">
-                      <input class="input is-medium" type="text" placeholder="Text input" value="bulma">
-                      <span class="icon is-small is-left">
-                        <i class="fas fa-globe"></i>
-                      </span>
-                      <span class="icon is-small is-right">
-                        <i class="fas fa-check"></i>
-                      </span>
-                    </div>
-                    <!-- <p class="help">This username is available</p> -->
-                  </div>
-                  <!-- gender -->
-                  <div class="field">
-                    <label class="label">Select Gender</label>
-                    <p class="control has-icons-left">
-                      <span class="select is-medium">
-                        <select>
-                          <option>Not Selected</option>
-                          <option>Male</option>
-                          <option>Female</option>
-                        </select>
-                      </span>
-                      <span class="icon is-small is-left">
-                        <i class="fa fa-transgender"></i>
-                      </span>
-                    </p>
-                  </div>
-                  <!-- submit button -->
-                  <div style="margin-top: 1.8rem;" class="field is-grouped">
-                    <div class="control">
-                      <button class="button is-outlined is-medium is-link">
-                        <span class="icon is-small">
-                          <i class="fas fa-pencil-alt"></i>
-                        </span>
-                        <span>Update Profile</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end Profile card -->
-          </div>
-          <div class="column">
-            <!-- Profile card -->
-            <div class="card profile-container">
-              <header class="card-header">
-                <p class="card-header-title">
-                  Change Password
-                </p>
-              </header>
-              <div class="card-content">
-                <div class="content">
-                  <div class="field">
-                    <p class="control has-icons-left">
-                      <input class="input is-medium" type="password" placeholder="Current Password">
-                      <span class="icon is-small is-left">
-                        <i class="fas fa-lock"></i>
-                      </span>
-                    </p>
-                  </div>
-                  <div class="field">
-                    <p class="control has-icons-left">
-                      <input class="input is-medium" type="password" placeholder="New Password">
-                      <span class="icon is-small is-left">
-                        <i class="fas fa-lock"></i>
-                      </span>
-                    </p>
-                  </div>
-                  <div class="field">
-                    <p class="control has-icons-left">
-                      <input class="input is-medium" type="password" placeholder="Retype Password">
-                      <span class="icon is-small is-left">
-                        <i class="fas fa-lock"></i>
-                      </span>
-                    </p>
-                  </div>
-                  <!-- submit button -->
-                  <div style="margin-top: 1.8rem;" class="field is-grouped">
-                    <div class="control">
-                      <button class="button is-outlined is-medium is-link">
-                        <span class="icon is-small">
-                          <i class="fas fa-lock"></i>
-                        </span>
-                        <span>Change Password</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end Profile card -->
-          </div>
+<body>
+  <% include partials/navbar.ejs %>
+  <div class="container profile-page-wrapper">
+    <div class="columns">
+      <div class="column">
+        <!-- Profile card -->
+        <div id="profile_info" class="card profile-container">
+
         </div>
-        </section>
+        <!-- end Profile card -->
+      </div>
+    </div>
+    </section>
 
-        <% include partials/footer %>
-          <script src="js/navbar.js"></script>
-  </body>
+    <% include partials/footer %>
+    <script src="js/var.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- production version, optimized for size and speed -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    <script src="js/profile.js"></script>
+</body>
 
 </html>

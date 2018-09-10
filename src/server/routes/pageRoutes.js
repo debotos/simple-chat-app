@@ -55,6 +55,7 @@ module.exports = passport => {
   // @desc    check for user loggedin, if yes then Get profile page
   // @access  Private
   router.get('/profile', isLoggedIn, profile.profilePage); // Local login
+  router.get('/profile/info', isLoggedIn, profile.profileInfo); // Local login
 
   return router;
 };
